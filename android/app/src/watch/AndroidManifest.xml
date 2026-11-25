@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-feature android:name="android.hardware.type.watch" android:required="true"/>
+ <application><meta-data android:name="com.google.android.wearable.standalone" android:value="false"/>
+ <uses-library android:name="com.google.android.wearable" android:required="false"/>
+ <service android:name=".AgendaTile" android:label="Daywell agenda" android:exported="true" android:permission="com.google.android.wearable.permission.BIND_TILE_PROVIDER"><intent-filter><action android:name="androidx.wear.tiles.action.BIND_TILE_PROVIDER"/></intent-filter></service>
+ <service android:name=".AgendaComplication" android:label="Current arc" android:exported="true" android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER"><intent-filter><action android:name="android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST"/></intent-filter><meta-data android:name="android.support.wearable.complications.SUPPORTED_TYPES" android:value="LONG_TEXT,SHORT_TEXT"/><meta-data android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS" android:value="300"/></service>
+ </application></manifest>
